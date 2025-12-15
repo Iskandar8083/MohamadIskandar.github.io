@@ -15,7 +15,7 @@
       --border: #e6eaf0;
       --text-main: #0f172a;
       --text-muted: #64748b;
-      --accent: #0a3d62; /* Ocean Blue (UMT-inspired) */
+      --accent: #0a3d62; /* Ocean Blue (UMT theme) */
     }
 
     * {
@@ -49,6 +49,13 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    /* Hover zoom effect */
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 28px rgba(10, 61, 98, 0.08);
     }
 
     .card h3 {
@@ -76,6 +83,10 @@
     }
 
     .hobby {
+      grid-column: span 3;
+    }
+
+    .reflection {
       grid-column: span 3;
     }
 
@@ -115,11 +126,15 @@
       margin-top: auto;
     }
 
-    .socials span {
+    .socials a {
       font-size: 0.85rem;
       color: var(--accent);
-      cursor: pointer;
       font-weight: 500;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      text-decoration: underline;
     }
 
     .placeholder-box {
@@ -138,6 +153,7 @@
       .profile,
       .location,
       .hobby,
+      .reflection,
       .tech,
       .case-study,
       .playlist {
@@ -149,7 +165,7 @@
 <body>
   <div class="container">
 
-    <!-- Card 1: Profile -->
+    <!-- Profile -->
     <div class="card profile">
       <div>
         <h3>Profile</h3>
@@ -158,42 +174,49 @@
         <p class="tagline">“Agriculture for all.”</p>
       </div>
       <div class="socials">
-        <span>LinkedIn</span>
-        <span>GitHub</span>
-        <span>UMT Portal</span>
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank">UMT Portal</a>
       </div>
     </div>
 
-    <!-- Card 2: Location -->
+    <!-- Location -->
     <div class="card location">
       <h3>Location</h3>
       <p>Universiti Malaysia Terengganu</p>
       <p class="meta">Kuala Nerus</p>
     </div>
 
-    <!-- Card 5: Hobby -->
+    <!-- Hobby -->
     <div class="card hobby">
       <h3>Hobby</h3>
       <p>Evening walks at Pantai UMT</p>
     </div>
 
-    <!-- Card 3: Tech / Subjects -->
+    <!-- Reflection -->
+    <div class="card reflection">
+      <h3>Why Agotechnology Matters in Malaysia</h3>
+      <p>
+        Sustainable food security is crucial for our future. By optimizing local processing
+        methods, we can reduce waste and improve nutrition.
+      </p>
+    </div>
+
+    <!-- Subjects -->
     <div class="card tech">
       <h3>Subjects</h3>
       <p>Microbiology, Excel, Lab Analysis</p>
       <div class="placeholder-box"></div>
     </div>
 
-    <!-- Card 4: Case Study -->
+    <!-- Case Study -->
     <div class="card case-study">
       <h3>Case Study</h3>
-      <p>
-        Drone as an innovative technology in modern farming
-      </p>
+      <p>Drone as an innovative technology in modern farming</p>
       <div class="placeholder-box"></div>
     </div>
 
-    <!-- Card 6: Playlist -->
+    <!-- Playlist -->
     <div class="card playlist">
       <h3>Playlist</h3>
       <p>Focus music for study sessions and lab work</p>
